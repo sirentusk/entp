@@ -6,30 +6,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add click event listeners to all img elements inside the class 'thumbnail'
     document.querySelectorAll('.thumbnail img').forEach(function(img) {
-        img.addEventListener('click', function(event) {
-            toggleExpand(event, this); // Pass 'this' to refer to the img element
-        });
+        img.addEventListener('click', toggleExpand);
     });
 });
 
-function toggleExpand(event, element) {
+function toggleExpand(event) {
     event.preventDefault();
-    var image = element || event.currentTarget; // Use the passed element or the event's currentTarget
+    var targetElement = event.target;
 
-    // Check if the clicked image already has the 'big' class
-    if (image.classList.contains('big')) {
+    // Handling if the target is an image inside a polygon
+    if (targetElement.tagName.toLowerCase() === 'img' && targetElement.parentElement.classList.contains('polygon')) {
+        targetElement = targetElement.parentElement;
+    }
+
+    // Check if the clicked element already has the 'big' class
+    if (targetElement.classList.contains('big')) {
         // If it does, remove it and reset the style
-        image.classList.remove('big');
-        image.style.zIndex = '';
+        targetElement.classList.remove('big');
+        targetElement.style.zIndex = '';
     } else {
-        // If it doesn't, first remove the 'big' class from any other image with 'big'
+        // If it doesn't, first remove the 'big' class from any other element with 'big'
         document.querySelectorAll('.big').forEach(function(el) {
-            el.classList.remove('big'); // Remove 'big' class from all images
-            el.style.zIndex = ''; // Reset z-index
+            el.classList.remove('big');
+            el.style.zIndex = '';
         });
 
-        // Then, add the 'big' class to the clicked image
-        image.classList.add('big');
-        image.style.zIndex = 10;
+        // Then, add the 'big' class to the clicked element
+        targetElement.classList.add('big');
+        targetElement.style.zIndex = 10;
     }
 }
