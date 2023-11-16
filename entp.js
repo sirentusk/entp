@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Add click event listeners to all img elements inside the class 'thumbnail'
-    document.querySelectorAll('.thumbnail img').forEach(function(img) {
+    document.querySelectorAll('.thumbnail').forEach(function(img) {
         img.addEventListener('click', toggleExpand);
     });
 });
