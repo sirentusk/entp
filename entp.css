@@ -1,0 +1,640 @@
+/* Reset and Base Styles */
+/* Reset default browser styles. */
+
+* {
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+/* Typography */
+/* For defining global font styles. */
+
+@font-face {
+	font-family: 'Bestermind';
+	src: url('font/Bestermind.ttf');
+	font-style: normal;
+}
+
+h1 {
+    color: #726798;
+    font-size: 54px;
+    margin-bottom: 50px;
+    text-shadow: 1px 0 0 rgb(56, 54, 54), /* Outline right */
+    0 1px 0 rgb(56, 54, 54), /* Outline top */
+    -1px 0 0 rgb(56, 54, 54), /* Outline left */
+    0 -1px 0 rgb(56, 54, 54), /* Outline bottom */
+    3px 3px 1px #8d9867, /* Shadow right */
+    3px 3px 1px #8d9867, /* Shadow top */
+    3px 3px 1px #8d9867, /* Shadow left */
+    3px 3px 1px #8d9867, /* Shadow bottom*/
+    4px 5px 5px rgba(16, 16, 16, 0.5), /* Shadow blur right */
+    1px 10px 10px rgba(16, 16, 16, 0.4), /* Shadow blur top */
+    1px 15px 30px rgba(16, 16, 16, 0.3), /* Shadow blur left */
+    1px 15px 30px rgba(16, 16, 16, 0.2); /* Shadow blur bottom*/
+}
+
+div h1 {
+    margin: -50px 0px -50px 0px;
+}
+
+p {
+    line-height: 2;
+    letter-spacing: 1px;
+    margin-left: 15px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+    padding-left: 0;
+    line-height: 40px;
+    display: inline;
+    line-height: 2;
+    gap: 10%;
+    padding: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* Colors and Themes */
+/* Defining color variables. */
+
+
+
+/* Custom Properties */
+/* Defining reusable CSS variables. */
+
+
+
+/* Layout and Structure */
+/* Overall layout grid, wrappers, and structural elements. */
+
+main {
+    position: absolute;
+    margin: 250px 150px 150px 150px;
+}
+
+section {
+    float: left;
+    width: 83%;
+}
+
+aside {
+    float: right;
+    width: 17%;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 20px;
+    margin: 100px 0px 50px 0px;
+}
+
+.page {
+    height: 100vh;
+    max-width: 100vw;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    scroll-snap-align: start;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 50vh; /* Adjust as needed */
+    padding: 80px;
+    transform: translate(-95%, 0%);
+}
+
+.polygon {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+.big {
+    position: fixed;
+    width: 32vw;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -60%) !important;
+    clip-path: none;
+    object-fit: cover;
+}
+
+hr {
+    border: 1px solid #000000;
+    margin: 5% 5% 5% 5%;
+}
+
+
+/* Table Styles */
+/* Styles related table layout and formatting. */
+
+table {
+    display: block;
+    max-width: 83%;
+}
+
+th {
+    padding: 20px 20px 20px 20px;
+}
+
+td {
+    padding: 0px 20px 20px 20px;
+    display: inline-block;
+    border: 1px solid;
+    line-break: normal;
+    white-space: pre;
+}
+
+/* Navigation and Header */
+/* Styles specific to site navigation and header components. */
+
+header {
+    z-index: 9998;
+    position: fixed;
+    vertical-align: top;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+    border-radius: 50px;
+    margin-left: 20px;
+    background: linear-gradient(to right, #726798, #8d9867);    
+}
+
+header img {
+    z-index: 9998;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 250px;
+    box-shadow: 3px 3px 10px #000000;
+    margin: 25px 25px 25px 25px;
+}
+
+nav {
+    z-index: 2;
+    position: fixed;
+    border: 1px solid rgb(199, 199, 199);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    vertical-align: top;
+    top: 2%;
+    left: 0;
+    width: 80%;
+    border-radius: 50px;
+    margin-left: 20px;
+    background: linear-gradient(to right, #726798, #8d9867);
+}
+
+@media (max-width: 920px) {
+    
+    nav {
+        z-index: 9998;
+        position: fixed;
+        border: 1px solid rgb(199, 199, 199);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        vertical-align: top;
+        top: 2%;
+        left: 0;
+        width: 50%;
+        border-radius: 50px;
+        margin-left: 20px;
+        background: linear-gradient(to right, #726798, #8d9867);
+    }
+    
+    header img {
+        z-index: 9998;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        border-radius: 250px;
+        box-shadow: 3px 3px 10px #000000;
+        margin: 25px 25px 25px 25px;
+    }
+}
+
+/* Components and Modules */
+/* Reusable components like buttons, cards, modals, etc. */
+
+.button {
+    background: conic-gradient(from 0deg, #8d9867 0deg, #6B5E38 36deg, #726798 72deg, #6B5E38 108deg, #8d9867 144deg, #8d9867 180deg, #6B5E38 216deg, #726798 252deg, #6B5E38 288deg, #8d9867 324deg);
+    text-align: center;
+    text-decoration: none;
+    font-size: calc(15px + 0.390625vw);
+    letter-spacing: 1px;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    font-weight: bold;
+    color: white;
+}
+
+/* Forms and Inputs */
+/* Styling form elements and input fields. */
+
+.toggle { /* Hides the checkbox under the open/close icons */
+    cursor: pointer;
+    position: absolute;
+    width: 100px;
+    height: 60%;
+    opacity: 1;
+    box-shadow: 3px 3px 10px #000000;
+    z-index: 9998;
+}
+
+/* Imagery and Videos */
+/* Styles related to images, videos and icons. */
+
+div img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+}
+
+p img {
+    box-shadow: none;
+    margin: 28px 0px 0px -28px;
+}
+
+td img {
+    width: 65px;
+    height: auto;
+    margin: -35px 0px -35px 0px;
+    gap: 0px;
+}
+
+.polygon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.big img {
+    object-fit: contain;
+}
+
+.page .gallery .polygon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    box-shadow: 0 5px 15px black;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.video {
+	margin: 70px 0px 7px 0px;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+.open, .close { /* Position icons */
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: 0;
+    right: 0;
+    padding: 25px;
+}
+
+/* Polygon image shape */
+.polygon:nth-of-type(1) { top: 50%; left: 50%; transform: translate(-50%, -100%); z-index: 1;}
+.polygon:nth-of-type(2) { top: 50%; left: 50%; transform: translate(0%, -125%); z-index: 2;}
+.polygon:nth-of-type(3) { top: 50%; left: 50%; transform: translate(50%, -100%); z-index: 1;}
+.polygon:nth-of-type(4) { top: 50%; left: 50%; transform: translate(50%, -50%); z-index: 2;}
+.polygon:nth-of-type(5) { top: 50%; left: 50%; transform: translate(0%, -25%); z-index: 1;}
+.polygon:nth-of-type(6) { top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;}
+
+
+.thumbnail {
+    height: 100vh;
+    max-width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbnail img {
+    height: 150px;
+    max-width: 150px;
+    cursor: pointer;
+}
+
+.largeimg img {
+    height: 90%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.thumbnail img:active {
+    z-index: 9999;
+}
+
+/* Utilities and Helpers */
+/* Small reusable classes with a single purpose or function */
+
+
+
+/* Accessibility Enhancements */
+/* Improve accessibility like focus states and screen reader-only text. */
+
+
+
+/* Responsive Styles */
+/* Media queries and styles that target different screen sizes and devices. */
+
+@media (max-width: 920px) {
+
+    .polygon {
+        width: 40vw;
+        height: 40vw;
+    }
+
+    .big {
+        position: fixed;
+        width: 70vw;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-25%, -60%) !important;
+        clip-path: none;
+        object-fit: cover;
+    }
+
+    .menu {
+        position: fixed;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-flow: wrap;
+        z-index: 9998;
+        width: 250px;
+        height: 350px;
+        top: 0;
+        left: 0;
+        text-shadow: 2px 2px 2px black;
+        padding: 15px;
+        transition: all 0.3s ease-in-out;
+        border-radius: 0px 100px 100px 0px;
+        box-shadow: 0px -5px 0px 0px grey inset;
+        background: conic-gradient(from 0deg, #8d9867 0deg, #6B5E38 36deg, #726798 72deg, #6B5E38 108deg, #8d9867 144deg, #8d9867 180deg, #6B5E38 216deg, #726798 252deg, #6B5E38 288deg, #8d9867 324deg);
+    }
+
+    .open, .close { /* Position icons */
+        cursor: pointer;
+        content: "";
+        position: absolute;
+        height: 4px;
+        top: 0;
+        right: 0;
+        padding: 35px;
+        overflow: hidden;
+    }
+
+    .open, .close { /* When mobile menu loads */
+        display: block;
+    }
+
+    .toggle:checked ~ .menu { /* Remove right: -400px; which makes it pan in/show */
+        left: 0;
+    }
+}
+
+/* State Styles */
+/* Pseudo-classes and interactive states like :hover, :focus, etc. */
+
+img:hover {
+    box-shadow: 0.5rem 0.5rem #8d9867, -0.5rem -0.5rem #726798;
+}
+
+img:active {
+    transform: scale(250%);
+    border: 2px solid #726798;
+    margin: auto;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+}
+
+td img:hover {
+    box-shadow: none;
+}
+
+td img:active {
+    transform: none;
+    border: none;
+    margin: auto;
+    box-shadow: none;
+}
+
+header img:active {
+    transform: scale(100%);
+}
+
+.page .gallery .polygon img:hover {
+    opacity: 0.7;
+    filter: hue-rotate(-0.25turn);
+    transition: transform ease 0.5s;
+    transform: scale(1.15);
+    z-index: 9;
+    cursor: zoom-in;
+}
+
+.page .gallery .big img:hover {
+    opacity: 1;
+    filter: none;
+    transition: transform ease 0.5s;
+    transform: none;
+    z-index: 9;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.button:hover {
+	animation: shake 0.5s;
+	animation-iteration-count: infinite;
+}
+
+header a:hover {
+    box-shadow: 0 -5px 0px #fff inset,
+    500px 0 0 rgba(255,255,255,0.03) inset;
+    padding: 35px 25px 45px 25px;
+}
+
+a:visited, a:link {
+	color: #726798;
+	background-color: transparent;
+	text-decoration: none;
+	letter-spacing: 2px;
+    font-weight: bold;
+}
+
+nav a:visited, nav a:link {
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+	letter-spacing: 2px;
+	text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+}
+
+nav a:hover, nav a:active, nav a:visited, nav .active {
+	text-shadow: 1px 1px 3px grey;
+}
+
+a:hover, a:active, a:visited, .active {
+    text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;
+}
+
+/* Animations and Keyframes */
+/* Defining CSS animations and keyframes. */
+
+@keyframes shake {
+	0% { transform: translate(1px, 1px) rotate(0deg); }
+	10% { transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { transform: translate(-3px, 0px) rotate(1deg); }
+	30% { transform: translate(3px, 2px) rotate(0deg); }
+	40% { transform: translate(1px, -1px) rotate(1deg); }
+	50% { transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { transform: translate(-3px, 1px) rotate(0deg); }
+	70% { transform: translate(3px, 1px) rotate(-1deg); }
+	80% { transform: translate(-1px, -1px) rotate(1deg); }
+	90% { transform: translate(1px, 2px) rotate(0deg); }
+	100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Cross-Browser Compatibility */
+/* Styling across different browsers. */
+
+
+
+
+/* Footers */
+/* Styles specific to the footer section. */
+
+@media (min-width: 920px) {
+    footer .desktop {
+        z-index: 9998;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        bottom: 1.5%;
+        right: 1%;
+        gap: 0px;
+        width: 300px;
+        border-radius: 50px;
+        padding: 3px 10px 5px 3px;
+        background: linear-gradient(to right, #726798, #8d9867);  
+    }
+    
+    footer .desktop img {
+        display: block;
+        margin: 0 auto;
+        width: 60px;
+        height: 60px;
+    }
+    
+    footer .desktop p {
+        line-height: 2;
+        font-family: 'Bestermind', fantasy;
+        letter-spacing: 5px;
+        font-weight: 900;
+    }
+
+    footer .mobile {
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 920px) {
+    
+    footer .mobile {
+        z-index: 9998;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        bottom: 0%;
+        right: 1%;
+        border-radius: 50px;
+        padding: 5px 8px 5px 6px;
+        background: linear-gradient(to right, #726798, #8d9867);  
+    }
+    
+    footer .mobile img {
+        width: 60px;
+        height: 60px;
+    }
+
+    footer .desktop {
+        visibility: hidden;
+    }
+
+    .page p {
+        width: 90%;
+        overflow-x: hidden;
+    }
+
+}
+
+/* Print Styles */
+/* Styles that apply when the document is printed. */
+
+@page {
+	size: A4;
+	margin: 0;
+}
+
+@media print {
+	html, body {
+		width: 210mm;
+		height: 297mm;
+}}
