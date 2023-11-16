@@ -211,7 +211,7 @@ nav a:visited, nav a:link {
 }
 
 header img:active {
-    transform: scale(100%);
+    transform: none;
 }
 
 header a:hover {
@@ -354,7 +354,7 @@ nav a:hover, nav a:active, nav a:visited, nav .active {
     z-index: 9999;
 }
 
-/* Imagery and Videos: Regular */
+/* Imagery and Videos: Images page */
 
 .largeimg img { /* Restrict singular page image size to screen */
     height: 90%;
@@ -386,6 +386,11 @@ nav a:hover, nav a:active, nav a:visited, nav .active {
     clip-path: none;
     z-index: 9999;
 }
+
+/* Imagery and Videos: In-line images */
+
+
+
 
 /* Utilities and Helpers */
 /* Small reusable classes with a single purpose or function */
@@ -462,6 +467,11 @@ nav a:hover, nav a:active, nav a:visited, nav .active {
 .button:hover {
 	animation: shake 0.5s;
 	animation-iteration-count: infinite;
+}
+
+.no img:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 img:hover {
