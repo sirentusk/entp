@@ -1,7 +1,10 @@
 RewriteEngine On
+
+# Redirect requests to HTML files
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
+# Deny access to a specific HTML file
 <Files "yandex_f9fb844594957a0b.html">
     Order Allow,Deny
     Deny from all
