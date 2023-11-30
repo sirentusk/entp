@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+<Files "yandex_f9fb844594957a0b.html">
+    Order Allow,Deny
+    Deny from all
+</Files>
