@@ -90,6 +90,7 @@ a:hover, a:active, a:visited, .active {
 main {
     position: absolute;
     margin: 250px 150px 150px 150px;
+    padding-bottom: 200px;
 }
 
 section {
@@ -125,6 +126,8 @@ div {
     margin-right: auto;
     scroll-snap-align: start;
 }
+
+
 
 hr {
     border: 1px solid #000000;
