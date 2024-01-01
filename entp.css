@@ -16,7 +16,7 @@
 }
 
 h1 {
-    color: #726798;
+    color: #726798; 
     font-size: 54px;
     margin-bottom: 50px;
     text-shadow: 1px 0 0 rgb(56, 54, 54), /* Outline right */
@@ -151,9 +151,13 @@ td {
     white-space: pre;
 }
 
+tr th {
+    font-size: 25px;
+}
+
 td img {
-    width: 65px;
-    height: auto;
+    width: auto;
+    height: 35px;
     margin: -35px 0px -35px 0px;
     gap: 0px;
 }
